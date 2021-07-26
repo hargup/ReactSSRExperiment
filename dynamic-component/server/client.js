@@ -5,7 +5,7 @@ var createReactClass = require('create-react-class');
 
 const TestComponentNonDyanmic = createReactClass({
     render: function() {
-        return <div>Non Dynamic Component</div>
+        return <p>Non Dynamic Component</p>
     }
 })
 
@@ -14,10 +14,10 @@ const loadScript = (scriptPath, callback) => {
     const script = document.createElement('script');
     script.src = `http://localhost:3000/${scriptPath}`;    
     // script.id = 'googleMaps';
-    document.body.appendChild(script);    script.onload = () => { 
+    document.body.appendChild(script);    
+    script.onload = () => { 
       if (callback) callback();
     };
- if (existingScript && callback) callback();
 };
 
 const Component = createReactClass({
