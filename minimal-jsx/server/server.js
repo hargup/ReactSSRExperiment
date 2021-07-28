@@ -2,7 +2,17 @@ var express = require('express');
 var app = express();
 var React = require('react');
 var ReactDOMServer = require('react-dom/server');
-var Component = require('./Component.js');
+var createReactClass = require('create-react-class');
+
+var Component = createReactClass({
+  render: function(){
+	return (<div>
+		<h1>Hello World!</h1>
+                <p>Isn't server-side rendering remarkable?</p>
+            </div>);
+	}
+});
+
 
 app.get('/', function(request, response) {
     var html = ReactDOMServer.renderToString(
