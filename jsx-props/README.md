@@ -1,6 +1,6 @@
-# Mimimal Server Side Rendering Example with JSX
+# Server Side Rendering Example with props
 
-This builds on previous example. The component.js file uses the JSX syntax, we use Babel to convert the code to convert it to ES5 compliant code, which you run directly with node.
+Builds on [JSX interactive](../jsx-interactive) example and introduces props.
 
 Example inspired from https://remarkablemark.medium.com/server-side-rendering-with-react-46715f501651
 
