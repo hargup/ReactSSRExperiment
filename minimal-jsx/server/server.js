@@ -9,11 +9,12 @@ var Component = createReactClass({
         alert("Javascript is working");
     },
   render: function(){
-	return (<div>
+	return (
+    <div>
 		<h1>Hello World!</h1>
                 <p>Isn't server-side rendering remarkable?</p>
                 <button onClick={this._handleClick}>Click Me</button>
-            </div>);
+        </div>);
 	}
 });
 
