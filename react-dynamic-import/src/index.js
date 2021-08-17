@@ -1,18 +1,42 @@
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+// src/main.js
+import "core-js/modules/es.promise";
+import "core-js/modules/es.array.iterator";
+
+// ...
+
 import React from "react";
 import ReactDOM from "react-dom"
+// import X from "./fruits/apple";
+
+async function getFruitFn(fruit) {
+  const {default: fruitFn} = await import(`./fruits/${fruit}`);
+  return fruitFn;
+}
+
+const Fruit = ({fruit}) => {
+  const clickHandler = async () => {
+    const fruitFn = await getFruitFn(fruit)
+    console.log("Calling Fruit fn")
+    fruitFn();
+  }
+  return (<button onClick={clickHandler}>
+    {fruit}
+  </button>)
+}
 
 const Component = () => {
   return (<div>
-  Hello React
+    <Fruit fruit="apple" />
+    <Fruit fruit="guava" />
+    <Fruit fruit="orange" />
   </div>)
 }
 
 ReactDOM.render(<Component />, document)
 
-// async function getFruitFn(fruit) {
-//   const {default: fruitFn} = await import(`./fruits/${fruit}`);
-//   return fruitFn;
-// }
+
 
 // function component() {
 //     const element = document.createElement('div');
