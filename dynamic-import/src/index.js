@@ -1,5 +1,5 @@
 async function getFruitFn(fruit) {
-  const {default: fruitFn} = await import(`./fruits/${fruit}`);
+  const {default: fruitFn} = await import(/*webpackIgnore: true*/ `./fruits/${fruit}.js`);
   return fruitFn;
 }
 
