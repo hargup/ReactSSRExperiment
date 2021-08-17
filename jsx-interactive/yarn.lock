@@ -3241,7 +3241,7 @@
     "glob-to-regexp" "^0.4.1"
     "graceful-fs" "^4.1.2"
 
-"webpack-cli@file:../../../../../opt/homebrew/lib/node_modules/webpack-cli":
+"webpack-cli@^4.7.2":
   "resolved" "file:../../../../../opt/homebrew/lib/node_modules/webpack-cli"
   "version" "4.7.2"
   dependencies:

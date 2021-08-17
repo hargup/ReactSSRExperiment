@@ -9,6 +9,7 @@ const TestComponentNonDyanmic = createReactClass({
     }
 })
 
+// TODO: The loadScript function is not necessary
 const loadScript = (scriptPath, callback) => {  
     // const existingScript = document.getElementById('googleMaps');  if (!existingScript) {}
     const script = document.createElement('script');
