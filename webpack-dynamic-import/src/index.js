@@ -1,15 +1,14 @@
 async function getFruitFn(fruit) {
-  const {default: fruitFn} = await import(`./${fruit}`);
+  const {default: fruitFn} = await import(`./fruits/${fruit}`);
   return fruitFn;
 }
 
 function component() {
     const element = document.createElement('div');
-    element.innerHTML = "Hello Dynamic Component";
 
     const appleBtn = document.createElement('button');
     appleBtn.innerHTML = 'Apple';
-    appleBtn.onclick = async () => {var fruitFn = await getFruitFn('apple'); console.log('calling fruit fn'); fruitFn()};
+    appleBtn.onclick = async () => {var fruitFn = await getFruitFn('apple'); console.log('calling fruit function'); fruitFn()};
     element.appendChild(appleBtn);
 
     const orangeBtn = document.createElement('button');
@@ -24,9 +23,6 @@ function component() {
     guavaBtn.onclick = async () => {var fruitFn = await getFruitFn('guava'); console.log('calling fruit fn'); fruitFn()};
 
     element.appendChild(guavaBtn);
-
-  
-
   
     return element;
   }
