@@ -22,4 +22,4 @@ const Greeting = () => {
 //     return <div>Hello Apple</div>
 //   }
 // }
-export default Example;
+export default Greeting;

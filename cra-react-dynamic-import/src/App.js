@@ -1,16 +1,17 @@
 import logo from './logo.svg';
+import ReactDOM from 'react-dom';
 import './App.css';
 
 async function getFruitFn(fruit) {
-  const {default: fruitFn} = await import(`./fruits/${fruit}`);
-  return fruitFn;
+  const {default: FruitComp} = await import(`./fruits/${fruit}`);
+  ReactDOM.render(<FruitComp />, document.getElementById('dynamic_component'))
+  console.log("Render successful")
+  return FruitComp;
 }
 
 const Fruit = ({fruit}) => {
   const clickHandler = async () => {
     const fruitFn = await getFruitFn(fruit)
-    console.log("Calling Fruit fn")
-    fruitFn();
   }
   return (<button onClick={clickHandler}>
     {fruit}
@@ -29,6 +30,7 @@ function App() {
   return (
     <div className="App">
       <Component />
+      <div id="dynamic_component"></div>
     </div>
   );
 }
